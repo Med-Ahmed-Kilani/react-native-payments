@@ -19,7 +19,6 @@ import com.google.android.gms.common.api.BooleanResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.identity.intents.model.UserAddress;
-import com.google.android.gms.wallet.CartItem;
 import com.google.android.gms.wallet.*;
 
 import com.facebook.react.bridge.ActivityEventListener;
@@ -280,14 +279,14 @@ public class ReactNativePaymentsModule extends ReactContextBaseJavaModule implem
     }
 
     private static List buildLineItems(ReadableArray displayItems) {
-        List<CartItem> list = new ArrayList<CartItem>();
+        List<LineItems> list = new ArrayList<LineItems>();
 
 
         for (int i = 0; i < (displayItems.size() - 1); i++) {
             ReadableMap displayItem = displayItems.getMap(i);
             ReadableMap amount = displayItem.getMap("amount");
 
-            list.add(CartItem.newBuilder()
+            list.add(LineItems.newBuilder()
                     .setCurrencyCode(amount.getString("currency"))
                     .setDescription(displayItem.getString("label"))
                     .setQuantity("1")
