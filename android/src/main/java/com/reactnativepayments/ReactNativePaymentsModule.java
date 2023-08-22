@@ -19,6 +19,7 @@ import com.google.android.gms.common.api.BooleanResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.identity.intents.model.UserAddress;
+import com.google.android.gms.wallet.CartItem;
 import com.google.android.gms.wallet.*;
 
 import com.facebook.react.bridge.ActivityEventListener;
