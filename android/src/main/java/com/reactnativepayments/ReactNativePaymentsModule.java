@@ -279,14 +279,14 @@ public class ReactNativePaymentsModule extends ReactContextBaseJavaModule implem
     }
 
     private static List buildLineItems(ReadableArray displayItems) {
-        List<LineItems> list = new ArrayList<LineItems>();
+        List<LineItem> list = new ArrayList<LineItem>();
 
 
         for (int i = 0; i < (displayItems.size() - 1); i++) {
             ReadableMap displayItem = displayItems.getMap(i);
             ReadableMap amount = displayItem.getMap("amount");
 
-            list.add(LineItems.newBuilder()
+            list.add(LineItem.newBuilder()
                     .setCurrencyCode(amount.getString("currency"))
                     .setDescription(displayItem.getString("label"))
                     .setQuantity("1")
